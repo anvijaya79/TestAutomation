@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite1]">
+  <parameter name="browserType" value="chrome"/>
+  <parameter name="url" value="http://www.imdb.com/chart/top"/>
+  <test name="SanityTest(failed)">
+    <parameter name="browserType" value="chrome"/>
+    <parameter name="url" value="http://www.imdb.com/chart/top"/>
+    <classes>
+      <class name="com.fyber.imdb.testClasses.ImdbTest">
+        <methods>
+          <include name="getCloudFramePortalTest" invocation-numbers="0"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.fyber.imdb.testClasses.ImdbTest -->
+    </classes>
+  </test> <!-- SanityTest(failed) -->
+</suite> <!-- Failed suite [Suite1] -->

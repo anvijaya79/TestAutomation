@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="7" passed="7">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite1" duration-ms="46702" started-at="2015-08-16T18:00:16Z" finished-at="2015-08-16T18:01:03Z">
+    <groups>
+    </groups>
+    <test name="SanityTest" duration-ms="46702" started-at="2015-08-16T18:00:16Z" finished-at="2015-08-16T18:01:03Z">
+      <class name="com.fyber.imdb.testClasses.ImdbTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.fyber.imdb.testClasses.ImdbTest@7e7b28dc]" name="setup" is-config="true" duration-ms="80" started-at="2015-08-16T23:30:16Z" finished-at="2015-08-16T23:30:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="getIMDbTest(java.lang.String)[pri:0, instance:com.fyber.imdb.testClasses.ImdbTest@7e7b28dc]" name="getIMDbTest" duration-ms="18149" started-at="2015-08-16T23:30:16Z" finished-at="2015-08-16T23:30:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://www.imdb.com/chart/top]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getIMDbTest -->
+        <test-method status="PASS" signature="Test1()[pri:0, instance:com.fyber.imdb.testClasses.ImdbTest@7e7b28dc]" name="Test1" duration-ms="24672" started-at="2015-08-16T23:30:35Z" depends-on-methods="com.fyber.imdb.testClasses.ImdbTest.getIMDbTest" finished-at="2015-08-16T23:30:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test1 -->
+        <test-method status="PASS" signature="Test2(java.lang.String)[pri:0, instance:com.fyber.imdb.testClasses.ImdbTest@7e7b28dc]" name="Test2" duration-ms="166" started-at="2015-08-16T23:30:59Z" depends-on-methods="com.fyber.imdb.testClasses.ImdbTest.Test1" finished-at="2015-08-16T23:30:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Ranking]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test2 -->
+        <test-method status="PASS" signature="Test3(java.lang.String)[pri:0, instance:com.fyber.imdb.testClasses.ImdbTest@7e7b28dc]" name="Test3" duration-ms="656" started-at="2015-08-16T23:30:59Z" depends-on-methods="com.fyber.imdb.testClasses.ImdbTest.Test2" finished-at="2015-08-16T23:31:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[IMDb Rating]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test3 -->
+        <test-method status="PASS" signature="Test4(java.lang.String)[pri:0, instance:com.fyber.imdb.testClasses.ImdbTest@7e7b28dc]" name="Test4" duration-ms="701" started-at="2015-08-16T23:31:00Z" depends-on-methods="com.fyber.imdb.testClasses.ImdbTest.Test3" finished-at="2015-08-16T23:31:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Release Date]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test4 -->
+        <test-method status="PASS" signature="Test5(java.lang.String)[pri:0, instance:com.fyber.imdb.testClasses.ImdbTest@7e7b28dc]" name="Test5" duration-ms="460" started-at="2015-08-16T23:31:01Z" depends-on-methods="com.fyber.imdb.testClasses.ImdbTest.Test4" finished-at="2015-08-16T23:31:01Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Your Rating]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test5 -->
+        <test-method status="PASS" signature="Test6()[pri:0, instance:com.fyber.imdb.testClasses.ImdbTest@7e7b28dc]" name="Test6" duration-ms="99" started-at="2015-08-16T23:31:01Z" depends-on-methods="com.fyber.imdb.testClasses.ImdbTest.Test5" finished-at="2015-08-16T23:31:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test6 -->
+        <test-method status="PASS" signature="cleanup()[pri:0, instance:com.fyber.imdb.testClasses.ImdbTest@7e7b28dc]" name="cleanup" is-config="true" duration-ms="1699" started-at="2015-08-16T23:31:01Z" finished-at="2015-08-16T23:31:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanup -->
+      </class> <!-- com.fyber.imdb.testClasses.ImdbTest -->
+    </test> <!-- SanityTest -->
+  </suite> <!-- Suite1 -->
+</testng-results>

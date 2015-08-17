@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="Suite1" verbose="1" >
+ <test name="SanityTest"> 
+    <parameter name="url"  value="http://www.imdb.com/chart/top"/>
+  <parameter name="browserType"  value="chrome" />
+  <parameter name="SortbyRanking"  value="Ranking" />
+  <parameter name="SortbyIMDbRating"  value="IMDb Rating" />
+  <parameter name="SortbyReleasedate"  value="Release Date" />
+   <parameter name="Sortbyyourrating"  value="Your Rating" />
+      <classes>
+ <class name="com.fyber.imdb.testClasses.ImdbTest"/>
+         </classes>
+  </test>
+</suite>
+  

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]">
+  <parameter name="SortbyRanking" value="Ranking"/>
+  <parameter name="url" value="http://www.imdb.com/chart/top"/>
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.fyber.imdb.testClasses.ImdbTest">
+        <methods>
+          <include name="getIMDbTest"/>
+          <include name="setup"/>
+          <include name="Test2" invocation-numbers="0"/>
+          <include name="Test1"/>
+        </methods>
+      </class> <!-- com.fyber.imdb.testClasses.ImdbTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

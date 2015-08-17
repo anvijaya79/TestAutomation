@@ -1,0 +1,52 @@
+<project name="IMDb" default="clean" basedir=".">
+     <property name="build.dir" value="${basedir}/build"/>
+	 <property name="lib.dir" value="${basedir}/lib"/>
+     <property name="src.dir" value="${basedir}/src"/>
+     <target name="setClassPath">
+         <path id="classpath_jars">
+             <pathelement path="${basedir}/" />
+             <fileset dir="${lib.dir}" includes="*.jar" />
+         	 </path>
+         <pathconvert pathsep=":" property="test.classpath" refid="classpath_jars" />
+     </target>
+     <target name="loadTestNG" depends="setClassPath">
+         <taskdef resource="testngtasks" classpath="${test.classpath}"/>
+     </target>
+     <target name="init">
+         <mkdir dir="${build.dir}"/>
+         <tstamp>
+             <format property="timestamp" pattern="dd-MM-yyyy_(HH-mm-ss)"/>
+         </tstamp>
+         <property name="build.log.dir" location="${basedir}/buildlogs"/>
+         <mkdir dir="${build.log.dir}"/>
+         <property name="build.log.filename" value="build_${timestamp}.log"/>
+         <record name="${build.log.dir}/${build.log.filename}" loglevel="verbose" append="false"/>
+         <echo message="build logged to ${build.log.filename}"/>
+     </target>
+     <target name="clean">
+         <echo message="deleting existing build directory"/>
+         <delete dir="${build.dir}"/>
+     </target>
+     <target name="compile" depends="clean,init,setClassPath,loadTestNG">
+         <echo message="classpath:${test.classpath}"/>
+         <echo message="compiling.........."/>
+         <javac destdir="${build.dir}" srcdir="${src.dir}" classpath="${test.classpath}"/>
+        </target>
+     <target name="runTests" depends="compile">
+         <testng classpath="${test.classpath}:${build.dir}">
+             <xmlfileset dir="${basedir}" includes="testng.xml"/>
+         </testng>
+     </target>
+     <target name="report" depends="runTests">
+         <delete dir="${basedir}/testng-xslt"/>
+         <mkdir dir="${basedir}/testng-xslt"/>
+         <xslt in="${basedir}/test-output/testng-results.xml"
+         style="${basedir}/src/xslt/testng-results.xsl" out="${basedir}/testng-xslt/index.html" processor="SaxonLiaison">
+             <param expression="${basedir}/testng-xslt/" name="testNgXslt.outputDir"/>
+             <param expression="true" name="testNGXslt.sortTestCaseLinks"/>
+             <param expression="FAIL,SKIP,PASS,BY_CLASS" name="testNgXslt.testDetailsFilter"/>
+             <param expression="true" name="testNgXslt.showRuntimeTotals"/>
+             <classpath refid="classpath_jars"/>
+         </xslt>
+     </target>
+   </project>
